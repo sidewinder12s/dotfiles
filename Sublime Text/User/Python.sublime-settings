@@ -1,0 +1,10 @@
+{
+	"extensions":
+	[
+		"py3",
+		"pyw"
+	],
+    "tab_size": 3,
+    "translate_tabs_to_spaces": true,
+    "detect_indentation": false
+}

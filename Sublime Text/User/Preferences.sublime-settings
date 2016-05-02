@@ -1,0 +1,33 @@
+{
+	"auto_complete": true,
+	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+	"draw_white_space": "all",
+	"fold_buttons": false,
+	"font_face": "Source Code Pro",
+	"font_options":
+	[
+		"subpixel_antialias",
+		"no_bold"
+	],
+	"font_size": 14,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"itg_small_tabs": true,
+	"line_padding_bottom": 0,
+	"line_padding_top": 0,
+	"rulers":
+	[
+		72,
+		79
+	],
+	"show_full_path": true,
+	"show_minimap": false,
+	"tab_size": 3,
+	"theme": "itg.flat.dark.aqua.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"word_wrap": true,
+	"wrap_width": 80
+}
