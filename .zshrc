@@ -39,8 +39,12 @@ export PATH=$PATH:$GOPATH/bin
 
 # *See here for pip stuff: https://hackercodex.com/guide/python-development-environment-on-mac-osx/
 # *Requires you to be in a virtualenv for pip to install python packages
-export PIP_REQUIRE_VIRTUALENV=true
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+else
+   export PIP_REQUIRE_VIRTUALENV=true
+fi
 
+#export PIP_REQUIRE_VIRTUALENV=true
 # *Allow overridding of pip virtualenv restriction
 gpip(){
    PIP_REQUIRE_VIRTUALENV="" pip "$@"
@@ -48,6 +52,8 @@ gpip(){
 
 # SAWS always use saml .aws/credentials profile
 export AWS_DEFAULT_PROFILE=saml
+
+export EDITOR='vim'
 
 source $ZSH/oh-my-zsh.sh
 
@@ -76,5 +82,19 @@ alias zshconfig="vim ~/.zshrc"
 alias vim="nvim"
 # cat with syntax highlighting
 alias cats='highlight -O ansi'
-
 . `brew --prefix`/etc/profile.d/z.sh
+
+# Options
+# why would you type 'cd dir' if you could just type 'dir'?
+setopt AUTO_CD
+
+# 10 second wait if you do something that will delete everything.  I wish I'd had this before...
+setopt RM_STAR_WAIT
+
+
+#{{{ Shell Conveniences
+alias sz='source ~/.zshrc'
+alias ez='vim ~/.zshrc'
+#alias mk=popd
+alias ls='pwd; ls -la'
+#}}}
