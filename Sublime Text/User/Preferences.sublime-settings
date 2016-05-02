@@ -18,21 +18,20 @@
 	"itg_small_tabs": true,
 	"line_padding_bottom": 1,
 	"line_padding_top": 1,
+	"open_files_in_new_window": false,
 	"rulers":
 	[
 		72,
 		79
 	],
 	"scroll_past_end": true,
+	"shift_tab_unindent": true,
 	"show_full_path": true,
 	"show_minimap": false,
 	"tab_size": 3,
 	"theme": "itg.flat.dark.aqua.sublime-theme",
-	//"theme": "Agila.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"open_files_in_new_window": false,
 	"trim_trailing_white_space_on_save": true,
-	"shift_tab_unindent": true,
 	"word_wrap": true,
 	"wrap_width": 80
 }

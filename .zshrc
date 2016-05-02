@@ -28,7 +28,12 @@ plugins=(web-search sudo tmux extract z sublime vagrant brew)
 # *Hides username/hostname on console when on local machine
 #DEFAULT_USER=`whoami`
 # This version is so vagrant boxes are clearly not OSX
-DEFAULT_USER=gwebster
+#DEFAULT_USER=gwebster + geoffreywebster
+
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+else
+   DEFAULT_USER=`whoami`
+fi
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -44,7 +49,6 @@ else
    export PIP_REQUIRE_VIRTUALENV=true
 fi
 
-#export PIP_REQUIRE_VIRTUALENV=true
 # *Allow overridding of pip virtualenv restriction
 gpip(){
    PIP_REQUIRE_VIRTUALENV="" pip "$@"
