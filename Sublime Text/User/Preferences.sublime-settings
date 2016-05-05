@@ -1,13 +1,16 @@
 {
+	"always_show_minimap_viewport": true,
 	"auto_complete": true,
-	"color_scheme": "Packages/User/SublimeLinter/itg.Monokai (SL).tmTheme",
+	"bold_folder_labels": false,
+	"color_scheme": "Packages/User/SublimeLinter/Material-Theme-OceanicNext (SL).tmTheme",
 	"draw_white_space": "all",
 	"fold_buttons": false,
 	"font_face": "Source Code Pro",
 	"font_options":
 	[
 		"subpixel_antialias",
-		"no_bold"
+		"no_bold",
+		"gray_antialias"
 	],
 	"font_size": 14,
 	"highlight_line": true,
@@ -15,10 +18,26 @@
 	[
 		"Vintage"
 	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
 	"itg_small_tabs": true,
 	"line_padding_bottom": 1,
 	"line_padding_top": 1,
+	"material_theme_accent_cyan": true,
+	"material_theme_compact_panel": true,
+	"material_theme_compact_sidebar": true,
+	"material_theme_contrast_mode": true,
+	"material_theme_disable_fileicons": false,
+	"material_theme_disable_folder_animation": true,
+	"material_theme_panel_separator": true,
+	"material_theme_small_statusbar": true,
+	"material_theme_small_tab": true,
+	"material_theme_tabs_autowidth": true,
 	"open_files_in_new_window": false,
+	"overlay_scroll_bars": "enabled",
 	"rulers":
 	[
 		72,
@@ -29,7 +48,7 @@
 	"show_full_path": true,
 	"show_minimap": false,
 	"tab_size": 3,
-	"theme": "itg.flat.dark.aqua.sublime-theme",
+	"theme": "Material-Theme.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true,

@@ -6,3 +6,5 @@ Package Control.merged-ca-bundle
 Package Control.system-ca-bundle
 Package Control.user-ca-bundle
 bh_unicode_properties.cache
+# Ignore this because It's got a GitHub OAuth Token in there.
+HaoGist.sublime-settings
