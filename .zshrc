@@ -21,14 +21,29 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(web-search sudo tmux extract z sublime vagrant brew)
+plugins=(web-search sudo tmux extract z sublime vagrant brew alias-tips)
 
 # User configuration
+# Some checks for things
+if [[ $(uname) = 'Linux' ]]; then
+   IS_LINUX=1
+fi
 
-# *Hides username/hostname on console when on local machine
-#DEFAULT_USER=`whoami`
-# This version is so vagrant boxes are clearly not OSX
-#DEFAULT_USER=gwebster + geoffreywebster
+if [[ $(uname) = 'Darwin' ]]; then
+   IS_MAC=1
+fi
+
+if [[ -x `which brew` ]]; then
+   HAS_BREW=1
+fi
+
+if [[ -x `which apt-get` ]]; then
+   HAS_APT=1
+fi
+
+if [[ -x `which yum` ]]; then
+   HAS_YUM=1
+fi
 
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
 else
@@ -61,21 +76,11 @@ export EDITOR='vim'
 
 source $ZSH/oh-my-zsh.sh
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# alias-tip plugin custom text
+export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Wubalubadubdub you got an Alias for that!: "
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -95,10 +100,18 @@ setopt AUTO_CD
 # 10 second wait if you do something that will delete everything.  I wish I'd had this before...
 setopt RM_STAR_WAIT
 
-
-#{{{ Shell Conveniences
+# Shell Conveniences
 alias sz='source ~/.zshrc'
 alias ez='vim ~/.zshrc'
 #alias mk=popd
-alias ls='pwd; ls -la'
-#}}}
+alias ls='pwd; ls -lFha'
+# Vagrant Up & SSH in the same line
+alias 'vus'='vagrant up && vagrant ssh'
+
+if [[ $IS_LINUX -eq 1 ]]; then
+    alias ls='pwd; ls -laFh --color=auto'
+fi
+
+if [[ $IS_MAC -eq 1 ]]; then
+  alias ls='pwd; ls -laGFh'
+fi

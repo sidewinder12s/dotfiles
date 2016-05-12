@@ -51,6 +51,7 @@
 		"SublimeLinter",
 		"SublimeLinter-contrib-golint",
 		"SublimeLinter-contrib-gotype",
+		"SublimeLinter-json",
 		"SublimeLinter-pylint",
 		"Terminal In Packages",
 		"Terraform",
