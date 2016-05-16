@@ -21,27 +21,27 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(web-search sudo tmux extract z sublime vagrant brew alias-tips)
 
 # User configuration
-# Some checks for things
+# Linux Check
 if [[ $(uname) = 'Linux' ]]; then
    IS_LINUX=1
 fi
-
+# OSX Check
 if [[ $(uname) = 'Darwin' ]]; then
    IS_MAC=1
 fi
-
+# Homebrew Check
 if [[ -x `which brew` ]]; then
    HAS_BREW=1
 fi
-
+# apt-get check
 if [[ -x `which apt-get` ]]; then
    HAS_APT=1
 fi
-
+# yum check
 if [[ -x `which yum` ]]; then
    HAS_YUM=1
 fi
-
+# ssh connection check
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
 else
    DEFAULT_USER=`whoami`
