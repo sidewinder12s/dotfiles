@@ -15,9 +15,6 @@ ENABLE_CORRECTION="true"
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Add wisely, as too many plugins slow down shell startup.
@@ -108,10 +105,21 @@ alias ls='pwd; ls -lFha'
 # Vagrant Up & SSH in the same line
 alias 'vus'='vagrant up && vagrant ssh'
 
+# Linux specific things
 if [[ $IS_LINUX -eq 1 ]]; then
     alias ls='pwd; ls -laFh --color=auto'
 fi
 
+# OSX Specific Things
 if [[ $IS_MAC -eq 1 ]]; then
   alias ls='pwd; ls -laGFh'
 fi
+
+# Load MOTD {{{
+# Need to get random selection of motd message working
+if [[ -d ~/dotfiles/motd ]]; then
+    for motd in ~/dotfiles/motd/*; do
+       cat $motd
+    done
+fi
+# }}}
