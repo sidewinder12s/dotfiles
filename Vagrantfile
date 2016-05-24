@@ -1,9 +1,10 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-Vagrant.configure('2') do |config|
+# Might be needed if the default 10.20.1.2/24 pool is in use
+#AutoNetwork.default_pool = '172.16.0.0/24'
 
-AutoNetwork.default_pool = '172.16.0.0/24'
+Vagrant.configure('2') do |config|
 
   if Vagrant.has_plugin?("vagrant-cachier")
     config.cache.scope = :box
