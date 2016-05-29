@@ -41,10 +41,13 @@ fi
 if [[ -x `which yum` ]]; then
    HAS_YUM=1
 fi
-# ssh connection check
+# Local non-ssh only settings
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
 else
    DEFAULT_USER=`whoami`
+   # *See here for pip stuff: https://hackercodex.com/guide/python-development-environment-on-mac-osx/
+   # *Requires you to be in a virtualenv for pip to install python packages
+   export PIP_REQUIRE_VIRTUALENV=true
 fi
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin"
@@ -53,13 +56,6 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin"
 # *Added for Golang Development
 export GOPATH=$HOME/Code/Go
 export PATH=$PATH:$GOPATH/bin
-
-# *See here for pip stuff: https://hackercodex.com/guide/python-development-environment-on-mac-osx/
-# *Requires you to be in a virtualenv for pip to install python packages
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-else
-   export PIP_REQUIRE_VIRTUALENV=true
-fi
 
 # *Allow overridding of pip virtualenv restriction
 gpip(){
@@ -101,7 +97,7 @@ setopt RM_STAR_WAIT
 alias sz='source ~/.zshrc'
 alias ez='vim ~/.zshrc'
 #alias mk=popd
-alias ls='pwd; ls -lFha'
+
 # Vagrant Up & SSH in the same line
 alias 'vus'='vagrant up && vagrant ssh'
 
@@ -112,7 +108,11 @@ fi
 
 # OSX Specific Things
 if [[ $IS_MAC -eq 1 ]]; then
+  # Lets make standard ls prettier
   alias ls='pwd; ls -laGFh'
+  eval "$(thefuck --alias)"
+  # Send stuff to OSX Trash
+  alias rm='trash'
 fi
 
 # Load MOTD {{{

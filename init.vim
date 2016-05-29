@@ -25,10 +25,10 @@ call plug#end()
 
 colorscheme solarized
 
-set tabstop=3     " a tab is four spaces
+set tabstop=4      " a tab is four spaces
 set expandtab
-set autoindent    " always set autoindenting on
+set autoindent     " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
-set number        " always show line numbers
-set showmatch     " set show matching parenthesis
+set number         " always show line numbers
+set showmatch   " set show matching parenthesis
 
