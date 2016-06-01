@@ -84,7 +84,7 @@ alias zshconfig="vim ~/.zshrc"
 alias vim="nvim"
 # cat with syntax highlighting
 alias cats='highlight -O ansi'
-. `brew --prefix`/etc/profile.d/z.sh
+
 
 # Options
 # why would you type 'cd dir' if you could just type 'dir'?
@@ -97,6 +97,7 @@ setopt RM_STAR_WAIT
 alias sz='source ~/.zshrc'
 alias ez='vim ~/.zshrc'
 #alias mk=popd
+alias awscreds='cat ~/.aws/credentials'
 
 # Vagrant Up & SSH in the same line
 alias 'vus'='vagrant up && vagrant ssh'
@@ -113,6 +114,7 @@ if [[ $IS_MAC -eq 1 ]]; then
   eval "$(thefuck --alias)"
   # Send stuff to OSX Trash
   alias rm='trash'
+  . `brew --prefix`/etc/profile.d/z.sh
 fi
 
 # Load MOTD {{{
