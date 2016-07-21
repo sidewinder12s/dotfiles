@@ -1,0 +1,9 @@
+{
+  "default_autoanchor": false,
+  "default_autolink": true,
+  "default_bracket": "round",
+  "default_depth": 2,
+  "default_indent": "\t",
+  "default_lowercase_only_ascii": false,
+  "default_style": "unordered"
+}

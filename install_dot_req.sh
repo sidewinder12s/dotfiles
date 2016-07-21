@@ -16,7 +16,7 @@ elif [ `uname` = 'Darwin' ]; then
    brew doctor
    brew update
    brew tap caskroom/cask
-   brew install ansible git zsh neovim highlight hugo packer tmux z node
+   brew install ansible git zsh neovim/neovim/neovim highlight hugo packer tmux z node
 else
    echo "INSTALL_DOT_REQ: Not on OSX or Linux"
 fi

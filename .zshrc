@@ -18,7 +18,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(web-search sudo tmux extract z sublime vagrant brew alias-tips)
+plugins=(web-search sudo osx tmux extract z sublime vagrant brew alias-tips)
 
 # User configuration
 # Linux Check
@@ -83,7 +83,7 @@ alias zshconfig="vim ~/.zshrc"
 # Use NeoVim instead of Vim
 alias vim="nvim"
 # cat with syntax highlighting
-alias cats='highlight -O ansi'
+alias cats='highlight -O ansi --force'
 
 
 # Options
@@ -114,6 +114,8 @@ if [[ $IS_MAC -eq 1 ]]; then
   eval "$(thefuck --alias)"
   # Send stuff to OSX Trash
   alias rm='trash'
+  # Open current directory in Finder
+  alias finder='ofd'
   . `brew --prefix`/etc/profile.d/z.sh
 fi
 
