@@ -1,6 +1,7 @@
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors
 syntax enable
 set background=dark
+set nocompatible
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -25,7 +26,7 @@ Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'tpope/vim-surround'
 call plug#end()
 
-colorscheme CodeSchool
+colorscheme codeschool
 
 set tabstop=4      " a tab is four spaces
 set expandtab

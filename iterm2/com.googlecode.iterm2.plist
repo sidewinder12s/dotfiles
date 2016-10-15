@@ -510,7 +510,7 @@
 	<key>NSFontPanelAttributes</key>
 	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Pictures/Wallpapers</string>
+	<string>~/Documents/iTerm Session Logs</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{868, 459}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
@@ -562,8 +562,12 @@
 	<string>516 412 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 364 620 392 0 0 1440 877 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>269 139 606 456 0 0 1440 877 </string>
+	<key>NSWindow Frame SharedPreferences</key>
+	<string>250 236 796 473 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>723 205 650 523 0 0 1440 877 </string>
+	<string>0 12 1434 865 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -582,6 +586,8 @@
 			<key>AWDS Window Option</key>
 			<string>No</string>
 			<key>Allow Title Reporting</key>
+			<true/>
+			<key>Allow Title Setting</key>
 			<false/>
 			<key>Ambiguous Double Width</key>
 			<false/>
@@ -730,7 +736,7 @@
 				<real>0.74176257848739624</real>
 			</dict>
 			<key>Automatically Log</key>
-			<false/>
+			<true/>
 			<key>BM Growl</key>
 			<true/>
 			<key>Background Color</key>
@@ -1156,7 +1162,7 @@
 				<real>0.023</real>
 			</dict>
 			<key>Log Directory</key>
-			<string></string>
+			<string>/Users/gwebster/Documents/iTerm Session Logs</string>
 			<key>Minimum Contrast</key>
 			<real>0.0</real>
 			<key>Mouse Reporting</key>
@@ -1322,7 +1328,7 @@
 				<string>dark</string>
 			</array>
 			<key>Terminal Type</key>
-			<string>ansi</string>
+			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
 			<integer>1</integer>
 			<key>Transparency</key>
@@ -1513,11 +1519,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing3.xml?shard=92</string>
+	<string>https://iterm2.com/appcasts/testing.xml?shard=92</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-06-21T05:00:52Z</date>
+	<date>2016-10-12T18:24:26Z</date>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>Secure Input</key>
@@ -1569,7 +1575,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.1</string>
+	<string>3.0.10</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
