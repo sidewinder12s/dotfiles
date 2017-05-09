@@ -8,7 +8,7 @@ elif [ `uname` = 'Darwin' ]; then
    echo "INSTALL_DOT_REQ: Found OSX"
    which -s brew
    if [[ $? != 0 ]]; then
-      echo 'IINSTALL_DOT_REQ: nstalling Homebrew...'
+      echo 'INSTALL_DOT_REQ: Installing Homebrew...'
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
       echo 'INSTALL_DOT_REQ: Updating Homebrew...'
    fi
@@ -29,8 +29,17 @@ fi
 echo "INSTALL_DOT_REQ: Installing vim-plug"
 curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+echo "INSTALL_DOT_REQ: Installing bullet-train zsh theme"
+curl -fLo $HOME/.oh-my-zsh/custom/themes/bullet-train.zsh-theme --create-dirs  http://raw.github.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme
+
 echo "INSTALL_DOT_REQ: Installing alias-tips zsh plugin"
-if [ ! -d ${ZSH_CUSTOM1:-$ZSH/custom}/plugins/alias-tips ]; then
-   cd ${ZSH_CUSTOM1:-$ZSH/custom}/plugins
+if [ ! -d $HOME/.oh-my-zsh/custom/plugins/alias-tips ]; then
+   cd $HOME/.oh-my-zsh/custom/plugins
    git clone https://github.com/djui/alias-tips.git
+fi
+
+echo "INSTALL_DOT_REQ: Installing git-extra-commands zsh plugin"
+if [ ! -d $HOME/.oh-my-zsh/custom/plugins/git-extra-commands ]; then
+   cd $HOME/.oh-my-zsh/custom/plugins
+   git clone https://github.com/unixorn/git-extra-commands.git
 fi

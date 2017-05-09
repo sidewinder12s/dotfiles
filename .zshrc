@@ -1,9 +1,32 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+### Must be set before loading bullettrain zsh theme
+BULLETTRAIN_CONTEXT_DEFAULT_USER=(gwebster)
+BULLETTRAIN_CONTEXT_IS_SSH_CLIENT=(true)
+BULLETTRAIN_CONTEXT_BG=(white)
+BULLETTRAIN_CONTEXT_FG=(black)
+BULLETTRAIN_CUSTOM_MSG=(λ)
+BULLETTRAIN_CUSTOM_BG=(green)
+BULLETTRAIN_CUSTOM_FG=(white)
+
+BULLETTRAIN_PROMPT_ORDER=(
+  custom
+  context
+  dir
+  status
+  virtualenv
+  git
+)
+BULLETTRAIN_PROMPT_CHAR=''
+BULLETTRAIN_PROMPT_SEPARATE_LINE=(false)
+BULLETTRAIN_PROMPT_ADD_NEWLINE=(false)
+### Required for a lot of these nicer zsh themes that have a lot of color
+export TERM="xterm-256color"
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-ZSH_THEME="agnoster"
+ZSH_THEME="bullet-train"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
@@ -18,7 +41,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(web-search sudo osx tmux extract z sublime vagrant brew alias-tips)
+plugins=(web-search git-extra-commands  sudo osx tmux extract z sublime vagrant brew alias-tips)
 
 # User configuration
 # Linux Check

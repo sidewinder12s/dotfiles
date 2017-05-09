@@ -1,10 +1,11 @@
 {
 	"always_show_minimap_viewport": true,
 	"auto_complete": true,
-	"bold_folder_labels": false,
+	"bold_folder_labels": true,
 	"color_scheme": "Packages/User/SublimeLinter/Material-Theme-OceanicNext (SL).tmTheme",
 	"draw_indent_guides": true,
 	"draw_white_space": "all",
+	"ensure_newline_at_eof_on_save": true,
 	"fold_buttons": false,
 	"font_face": "Source Code Pro",
 	"font_options":
