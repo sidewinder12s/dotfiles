@@ -3,7 +3,7 @@
 	[
 		".gemrc",
 		"yml.dist",
-		"YAML-tmLanguage",
-		"yml"
+		"yml",
+		"YAML-tmLanguage"
 	]
 }
