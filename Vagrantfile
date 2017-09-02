@@ -18,13 +18,6 @@ Vagrant.configure('2') do |config|
     config.vm.network :private_network, :auto_network => true
   end
 
-  config.vm.provision :shell, privileged: false, path: "~/dotfiles/install_dot_req.sh"
-  #config.vm.provision :file, source: "~/dotfiles", destination: "/home/vagrant/dotfiles"
   config.vm.synced_folder "~/dotfiles", "/home/vagrant/dotfiles"
-  config.vm.provision :shell, privileged: false, path: "~/dotfiles/install_dot.sh"
-  config.vm.provision :shell, inline: "chsh -s /bin/zsh vagrant"
-  config.vm.provision :shell, inline: "sed -i 's/ZSH_THEME=\"agnoster\"/ZSH_THEME=\"avit\"/g' /home/vagrant/.zshrc"
-  # apt-get upgrade from https://github.com/chef/bento/issues/661#issuecomment-248136601
-  config.vm.provision :shell, inline: "sudo apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::=\"--force-confdef\" -o Dpkg::Options::=\"--force-confold\" upgrade"
 
 end

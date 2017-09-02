@@ -1484,7 +1484,7 @@
 	<key>PasteHistoryMaxOptions</key>
 	<integer>100</integer>
 	<key>PasteTabToStringTabStopSize</key>
-	<integer>4</integer>
+	<integer>2</integer>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1539,7 +1539,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-07-24T18:08:36Z</date>
+	<date>2017-08-11T00:34:26Z</date>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>Secure Input</key>

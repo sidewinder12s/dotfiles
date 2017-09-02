@@ -1,0 +1,20 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+  config.vm.define "docker" do |docker|
+    docker.vm.provider "docker" do |d|
+      d.build_dir = "."
+      d.name = "dev"
+      d.build_args = ["--tag=dev"]
+      #Forces Vagrant to use native macOS Docker implementation
+      d.force_host_vm = false
+      # Tells Vagrant it can SSH into this docker container
+      d.has_ssh = true
+    end
+     docker.vm.synced_folder "~/.aws", "/home/vagrant/.aws"
+     docker.vm.synced_folder "~/dotfiles", "/home/vagrant/dotfiles"
+     #Post Docker Build configuration
+     docker.vm.provision "docker", type: "shell", path: "config.sh"
+  end
+end
