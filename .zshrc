@@ -86,7 +86,7 @@ gpip(){
 }
 
 # SAWS always use saml .aws/credentials profile
-export AWS_DEFAULT_PROFILE=saml
+#export AWS_DEFAULT_PROFILE=saml
 
 export EDITOR='vim'
 
