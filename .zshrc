@@ -70,7 +70,7 @@ else
    DEFAULT_USER=`whoami`
    # *See here for pip stuff: https://hackercodex.com/guide/python-development-environment-on-mac-osx/
    # *Requires you to be in a virtualenv for pip to install python packages
-   export PIP_REQUIRE_VIRTUALENV=true
+   #export PIP_REQUIRE_VIRTUALENV=true
 fi
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin"
@@ -80,20 +80,9 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin"
 export GOPATH=$HOME/Code/Go
 export PATH=$PATH:$GOPATH/bin
 
-# *Allow overridding of pip virtualenv restriction
-gpip(){
-   PIP_REQUIRE_VIRTUALENV="" pip "$@"
-}
-
-# SAWS always use saml .aws/credentials profile
-#export AWS_DEFAULT_PROFILE=saml
-
 export EDITOR='vim'
 
 source $ZSH/oh-my-zsh.sh
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # alias-tip plugin custom text
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Wubalubadubdub you got an Alias for that!: "
@@ -107,7 +96,6 @@ alias zshconfig="vim ~/.zshrc"
 alias vim="nvim"
 # cat with syntax highlighting
 alias cats='highlight -O ansi --force'
-
 
 # Options
 # why would you type 'cd dir' if you could just type 'dir'?
