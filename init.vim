@@ -24,6 +24,9 @@ Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh',
 " Go
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'tpope/vim-surround'
+" Bazel Support
+Plug 'google/vim-maktaba'
+Plug 'bazelbuild/vim-bazel'
 call plug#end()
 
 colorscheme codeschool
