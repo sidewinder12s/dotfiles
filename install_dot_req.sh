@@ -2,8 +2,14 @@ echo "INSTALL_DOT_REQ: Installing Requirements"
 if [ `uname` = 'Linux' ]; then
    echo "INSTALL_DOT_REQ: Found Linux"
    sudo add-apt-repository ppa:neovim-ppa/unstable -y
+
+   # vscode
+   wget -O code.deb https://go.microsoft.com/fwlink/?LinkID=760868
+   sudo apt install ./code.deb
+
+
    sudo apt-get update
-   sudo apt-get install zsh git neovim highlight curl tmux -y
+   sudo apt-get install fonts-powerline zsh git neovim highlight curl tmux jq xclip -y
 elif [ `uname` = 'Darwin' ]; then
    echo "INSTALL_DOT_REQ: Found OSX"
    which -s brew
@@ -16,7 +22,7 @@ elif [ `uname` = 'Darwin' ]; then
    brew doctor
    brew update
    brew tap caskroom/cask
-   brew install ansible git zsh neovim/neovim/neovim highlight hugo packer tmux z node
+   brew install ansible git zsh neovim/neovim/neovim highlight hugo packer tmux z node code
 else
    echo "INSTALL_DOT_REQ: Not on OSX or Linux"
 fi
