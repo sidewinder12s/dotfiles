@@ -116,6 +116,12 @@ alias 'vus'='vagrant up && vagrant ssh'
 # Linux specific things
 if [[ $IS_LINUX -eq 1 ]]; then
     alias ls='pwd; ls -laFh --color=auto'
+    # Alias for macOS cli clipboard for ubuntu
+    alias pbcopy='xclip -selection clipboard'
+    alias pbpaste='xclip -selection clipboard -o'
+
+    # Send to Ubuntu Trash
+    alias rm='gvfs-trash'
 fi
 
 # OSX Specific Things
@@ -138,3 +144,15 @@ if [[ -d ~/dotfiles/motd ]]; then
     done
 fi
 # }}}
+
+function gissh () {
+ gcloud beta compute ssh --tunnel-through-iap $1
+}
+
+function unset-aws {
+  unset AWS_ACCESS_KEY_ID;
+  unset AWS_SECRET_ACCESS_KEY;
+  unset AWS_SESSION_TOKEN;
+  unset AWS_PROFILE;
+}
+

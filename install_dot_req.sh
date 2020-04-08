@@ -9,7 +9,7 @@ if [ `uname` = 'Linux' ]; then
 
 
    sudo apt-get update
-   sudo apt-get install fonts-powerline zsh git neovim highlight curl tmux jq -y
+   sudo apt-get install fonts-powerline zsh git neovim highlight curl tmux jq xclip -y
 elif [ `uname` = 'Darwin' ]; then
    echo "INSTALL_DOT_REQ: Found OSX"
    which -s brew
