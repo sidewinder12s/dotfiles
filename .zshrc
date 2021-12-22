@@ -6,12 +6,11 @@ BULLETTRAIN_CONTEXT_DEFAULT_USER=(gwebster)
 BULLETTRAIN_CONTEXT_IS_SSH_CLIENT=(true)
 BULLETTRAIN_CONTEXT_BG=(white)
 BULLETTRAIN_CONTEXT_FG=(black)
-BULLETTRAIN_CUSTOM_MSG=(λ)
+#BULLETTRAIN_CUSTOM_MSG=(λ)
 BULLETTRAIN_CUSTOM_BG=(green)
 BULLETTRAIN_CUSTOM_FG=(white)
 
 BULLETTRAIN_PROMPT_ORDER=(
-  custom
   context
   dir
   status
@@ -41,7 +40,21 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(web-search git-extra-commands  sudo osx tmux extract z sublime vagrant brew alias-tips)
+plugins=(web-search
+        git-extra-commands
+        sudo
+        macos
+        tmux
+        extract
+        z
+        sublime
+        vagrant
+        brew
+        alias-tips
+        docker
+        colored-man-pages
+        ubuntu
+)
 
 # User configuration
 # Linux Check
@@ -64,6 +77,7 @@ fi
 if [[ -x `which yum` ]]; then
    HAS_YUM=1
 fi
+
 # Local non-ssh only settings
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
 else
@@ -73,14 +87,12 @@ else
    #export PIP_REQUIRE_VIRTUALENV=true
 fi
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin
 
 # *Added for Golang Development
-export GOPATH=$HOME/Code/Go
 export PATH=$PATH:$GOPATH/bin
 
-export EDITOR='vim'
+export EDITOR='code --wait'
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,6 +109,10 @@ alias vim="nvim"
 # cat with syntax highlighting
 alias cats='highlight -O ansi --force'
 
+alias kp='kubectl get pods -o wide'
+
+alias k="kubectl"
+
 # Options
 # why would you type 'cd dir' if you could just type 'dir'?
 setopt AUTO_CD
@@ -110,9 +126,6 @@ alias ez='vim ~/.zshrc'
 #alias mk=popd
 alias awscreds='cat ~/.aws/credentials'
 
-# Vagrant Up & SSH in the same line
-alias 'vus'='vagrant up && vagrant ssh'
-
 # Linux specific things
 if [[ $IS_LINUX -eq 1 ]]; then
     alias ls='pwd; ls -laFh --color=auto'
@@ -121,7 +134,7 @@ if [[ $IS_LINUX -eq 1 ]]; then
     alias pbpaste='xclip -selection clipboard -o'
 
     # Send to Ubuntu Trash
-    alias rm='gvfs-trash'
+    #alias rm='gvfs-trash'
 fi
 
 # OSX Specific Things
@@ -145,6 +158,14 @@ if [[ -d ~/dotfiles/motd ]]; then
 fi
 # }}}
 
+eval "$(mcfly init zsh)"
+
+# Starship
+#eval "$(starship init zsh)"
+
+# kubectl krew
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
 function gissh () {
  gcloud beta compute ssh --tunnel-through-iap $1
 }
@@ -155,4 +176,18 @@ function unset-aws {
   unset AWS_SESSION_TOKEN;
   unset AWS_PROFILE;
 }
+
+# https://superuser.com/questions/439209/how-to-partially-disable-the-zshs-autocorrect
+unsetopt correct_all
+setopt correct
+
+source <(kubectl completion zsh)
+
+# Seems to fix command outputs to not take over the screen
+export LESS="-RXF"
+
+export AWS_DEFAULT_REGION=us-east-1
+
+# Don't open a text editor for merges without a message.
+export GIT_MERGE_AUTOEDIT=no
 
