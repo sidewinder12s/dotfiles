@@ -49,3 +49,8 @@ if [ ! -d $HOME/.oh-my-zsh/custom/plugins/git-extra-commands ]; then
    cd $HOME/.oh-my-zsh/custom/plugins
    git clone https://github.com/unixorn/git-extra-commands.git
 fi
+
+# new stuff
+# Starship
+# sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+
