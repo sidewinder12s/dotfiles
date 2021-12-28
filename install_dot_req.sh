@@ -7,6 +7,8 @@ if [ `uname` = 'Linux' ]; then
    wget -O code.deb https://go.microsoft.com/fwlink/?LinkID=760868
    sudo apt install ./code.deb
 
+   # Install mcfly
+   curl -LSfs https://raw.githubusercontent.com/cantino/mcfly/master/ci/install.sh | sudo sh -s -- --git cantino/mcfly
 
    sudo apt-get update
    sudo apt-get install fonts-powerline zsh git neovim highlight curl tmux jq xclip -y
@@ -22,7 +24,8 @@ elif [ `uname` = 'Darwin' ]; then
    brew doctor
    brew update
    brew tap caskroom/cask
-   brew install ansible git zsh neovim/neovim/neovim highlight hugo packer tmux z node code
+   brew tap cantino/mcfly
+   brew install ansible git zsh neovim/neovim/neovim highlight hugo packer tmux z node code mcfly
 else
    echo "INSTALL_DOT_REQ: Not on OSX or Linux"
 fi
@@ -53,4 +56,3 @@ fi
 # new stuff
 # Starship
 # sh -c "$(curl -fsSL https://starship.rs/install.sh)"
-
