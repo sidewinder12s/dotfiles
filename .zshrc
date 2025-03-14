@@ -191,3 +191,4 @@ export AWS_DEFAULT_REGION=us-east-1
 # Don't open a text editor for merges without a message.
 export GIT_MERGE_AUTOEDIT=no
 
+alias python=/usr/bin/python3
